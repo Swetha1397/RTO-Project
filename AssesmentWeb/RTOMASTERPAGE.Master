@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RTOMASTERPAGE.master.cs" Inherits="AssesmentWeb.RTOMASTERPAGE" %>
+
+<%@ Register Src="~/HOME/USER CONTROLS/RTOUserControl.ascx" TagPrefix="uc1" TagName="RTOUserControl" %>
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <link href="CSS/mycss.css" rel="stylesheet" type="text/css" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script>
+
+</script>
+    <style>
+        div.dL {
+            margin-left: 200px;
+            text-align: center;
+            font-size: 18px;
+            text-justify: auto;
+            color: saddlebrown;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+
+    <form runat="server">
+
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div>
+            <h3><b>REGIONAL TRANSPORT OFFICE</b></h3>
+        </div>
+        <div>
+            <ul>
+
+                <li><a runat="server" href="~/">HOME</a></li>
+
+
+                <li style="float: right"><a runat="server" href="~/HOME/Login">LOGIN</a></li>
+            </ul>
+        </div>
+        <div>
+            <uc1:RTOUserControl runat="server" ID="RTOUserControl" />
+            <div class="dL">
+                <p>
+                    <b style: font-weight="16">DRIVING LICENSE</b>
+                    <br />
+                    For Driving License, Two Wheeler and LMV, the applicant has to appear for test of competence to drive by individually or through recognised Driving Schools before the Motor Vehicle Inspector. The data already 
+entered and document uploaded for LLR can be used for getting DL in Portal, but a fee has to be paid by online itself.Driving licence will be issued for 20 years from the date of issue or up to 40 years of 
+age whichever is earlier for A non-transport vehicles and in case of transport vehicle it will be valid for three years from the date of issue.The Motor vehicles Inspector will conduct the test of competence 
+to drive vehicle as per the procedures laid down under the rule 15 of Central Motor Vehicle Rules,1989. After satisfaction about the driving skills, the testing authority will pass the order for issue of driving
+licence.Once applicant clears driving test, Driving License will be issued by the Asst. Licensing Authority after capturing of bio-metrics including Photograph.If applicant failed in driving test, they can appear
+again for re-test after 7 days. If the applicant does not pass even after three driving tests, he shall not be qualified to reappear for such test before 60 days.
+                    <br />
+                </p>
+                <p>
+                    <b style: font-weight="14">DOCUMENTS REQUIRED:</b>
+                    <br />
+                    1. Application in Form-2 generated through online<br />
+                    2.Valid Learner Licence.<br />
+                    3.Documents of vehicle in which applicant proposes to appear for test of competence to drive.<br />
+                    4.Form 5 and Form 15
+
+                </p>
+            </div>
+
+
+
+
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <hr />
+                <div>
+                    <footer id="copyright">
+                        <p>&copy; <%: DateTime.Now.Year %> - Regional Transport Office - South India</p>
+
+                    </footer>
+
+                </div>
+            </div>
+    </form>
+</body>
+</html>
